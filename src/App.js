@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import ForgotPassword from './Login-pages/Forgotpassword'
+import Signup from './Login-pages/Signup'
+import { Routes, Route } from "react-router-dom";
+import Login from './Login-pages/Login';
+import Product from './Products/Products';
+import Addproduct from './Products/Addproduct';
+import ViewProduct from './Products/Viewproduct';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/Product" element={<Product />} />
+        <Route path="/ForgotPassword/*" element={<ForgotPassword />} />
+        <Route path="/SignUp/*" element={<Signup />} />
+        <Route path="/Addproduct" element={<Addproduct />} />
+        <Route path="/viewProduct" element={<ViewProduct />} />
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App
